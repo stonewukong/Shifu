@@ -78,6 +78,7 @@ const Page = () => {
               Enter your username and password to login to your account
             </CardDescription>
           </CardHeader>
+
           <CardContent>
             <div className="space-y-4">
               <div className="space-y-2">
@@ -141,23 +142,18 @@ const Page = () => {
                   "Login"
                 )}
               </Button>
-              {/* <div className="relative">
-                <div className="absolute inset-0 flex items-center">
-                  <span className="w-full border-t border-neutral-300 dark:border-neutral-600"></span>
-                </div>
-                <div className="relative flex justify-center text-xs uppercase">
-                  <span className="bg-white px-2 text-neutral-500 dark:bg-neutral-900 dark:text-neutral-400">
-                    Or continue with
-                  </span>
-                </div>
+              <div className="mb-4 rounded-md border p-3 text-neutral-700 dark:border-yellow-300 dark:text-neutral-200">
+                <p className="text-center text-sm font-medium">
+                  🔑 Or, for a quick preview: Use username{" "}
+                  <code className="rounded-md bg-yellow-400 p-1 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-100">
+                    guest
+                  </code>{" "}
+                  and password{" "}
+                  <code className="text-neutral-80 rounded-md bg-yellow-400 p-1 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-100">
+                    password
+                  </code>{" "}
+                </p>
               </div>
-              <Button
-                className="w-full gap-1 border border-neutral-300 bg-white text-neutral-800 transition-colors duration-300 hover:bg-neutral-50 dark:border-neutral-500 dark:bg-transparent dark:text-neutral-100 dark:hover:bg-neutral-800"
-                onClick={onGoogleClick}
-              >
-                <Google />
-                Google
-              </Button> */}
             </div>
           </CardContent>
         </Card>

@@ -183,6 +183,19 @@ const Page = () => {
           Google
         </Button> */}
         <div className="text-center text-sm">
+          <div className="mb-4 rounded-md border p-3 text-neutral-700 dark:border-yellow-300 dark:text-neutral-200">
+            <p className="text-center text-sm font-medium">
+              🔑 Or, for a quick preview: Use username{" "}
+              <code className="text-neutral-80 rounded-md bg-yellow-400 p-1 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-100">
+                guest
+              </code>{" "}
+              and password{" "}
+              <code className="text-neutral-80 rounded-md bg-yellow-400 p-1 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-100">
+                password
+              </code>{" "}
+              to log in
+            </p>
+          </div>
           <span className="text-neutral-600 dark:text-neutral-400">
             Already have an account?
           </span>{" "}
