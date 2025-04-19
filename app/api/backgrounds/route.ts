@@ -19,11 +19,11 @@ export async function GET() {
 
     const user_id = user?.id;
 
-    let cachedData = await redis.hGet(`user:${user_id}`, "current_background");
+    // let cachedData = await redis.hGet(`user:${user_id}`, "current_background");
 
-    if (cachedData) {
-      return NextResponse.json(JSON.parse(cachedData), { status: 200 });
-    }
+    // if (cachedData) {
+    //   return NextResponse.json(JSON.parse(cachedData), { status: 200 });
+    // }
 
     let currentBackground = await BackgroundsCollection.findOne({ user_id });
 
@@ -35,24 +35,24 @@ export async function GET() {
         user_id,
       });
 
-      await redis.hSet(
-        `user:${user_id}`,
-        "current_background",
-        JSON.stringify(defaultBackground),
-      );
+      // await redis.hSet(
+      //   `user:${user_id}`,
+      //   "current_background",
+      //   JSON.stringify(defaultBackground),
+      // );
 
-      await redis.expire(`user:${user_id}`, 86400);
+      // await redis.expire(`user:${user_id}`, 86400);
 
       return NextResponse.json(defaultBackground, { status: 200 });
     }
 
-    await redis.hSet(
-      `user:${user_id}`,
-      "current_background",
-      JSON.stringify(currentBackground),
-    );
+    // await redis.hSet(
+    //   `user:${user_id}`,
+    //   "current_background",
+    //   JSON.stringify(currentBackground),
+    // );
 
-    await redis.expire(`user:${user_id}`, 86400);
+    // await redis.expire(`user:${user_id}`, 86400);
 
     return NextResponse.json(currentBackground, { status: 200 });
   } catch (error) {
@@ -98,11 +98,11 @@ export async function PATCH(req: NextRequest) {
       );
     }
 
-    await redis.hSet(
-      `user:${user_id}`,
-      "current_background",
-      JSON.stringify({ mediaRef, name, portfolio_url, active }),
-    );
+    // await redis.hSet(
+    //   `user:${user_id}`,
+    //   "current_background",
+    //   JSON.stringify({ mediaRef, name, portfolio_url, active }),
+    // );
 
     return NextResponse.json(
       { message: "Background updated successfully." },
